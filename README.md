@@ -22,3 +22,7 @@ Represent a color in terms of specific features that can be found by means of fe
 When dealing with printing processes, the color of each copy must be as close as possible to that of the master.
 In order to objectively compare a copy to a master, a neural network is designed and trained to measure the difference between two similar colors. From an operational point of view, the network takes as input the representations of a master color and of a copy, and returns their color difference in ΔE CIE.
 an observer perceives a difference between two colors only when they have a value of ∆E that is much higher than 3.5. It is the case, e.g., of the dark region of the CIE Lab color space. Further imprecisions of ∆E occur in the blue-violet region. So, to solve this problem is developed a fuzzy inference system to fix the deficiencies of CIE Lab.
+
+# Contributors
+
+[Antonio Di Tecco](https://github.com/djqwert)
