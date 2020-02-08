@@ -1,0 +1,79 @@
+[System]
+Name='sugeno_fuzzy'
+Type='sugeno'
+Version=2.0
+NumInputs=4
+NumOutputs=1
+NumRules=16
+AndMethod='min'
+OrMethod='max'
+ImpMethod='prod'
+AggMethod='sum'
+DefuzzMethod='wtaver'
+
+[Input1]
+Name='L'
+Range=[25.038946393097 87.6907606150015]
+NumMFs=2
+MF1='Bassa':'trimf',[-40 0 100]
+MF2='Alta':'trimf',[0 100 140]
+
+[Input2]
+Name='C'
+Range=[1.86231049152088 61.1211527437249]
+NumMFs=2
+MF1='Insaturo':'trimf',[-40 0 100]
+MF2='Saturo':'trimf',[0 100 140]
+
+[Input3]
+Name='hue'
+Range=[0.0549488737034355 359.635897239706]
+NumMFs=2
+MF1='Rosso1':'trimf',[-144 0 360]
+MF2='Rosso2':'trimf',[0 360 504]
+
+[Input4]
+Name='dErrore'
+Range=[0.492671228141894 3.94633070357901]
+NumMFs=2
+MF1='Piccolo':'trimf',[-2 0 5]
+MF2='Grande':'trimf',[0 5 7]
+
+[Output1]
+Name='Errore'
+Range=[0.317001856868998 2.71026923035094]
+NumMFs=16
+MF1='Piccolo1':'constant',[0.171254340426661]
+MF2='Grande1':'constant',[6.42785576378833]
+MF3='Piccolo2':'constant',[0.417058652003834]
+MF4='Grande2':'constant',[7.61887379044298]
+MF5='Piccolo3':'constant',[7.55582077828187]
+MF6='Grande3':'constant',[6.5996296772238]
+MF7='Piccolo4':'constant',[-9.92902248031658]
+MF8='Grande4':'constant',[-7.09333985521763]
+MF9='Piccolo5':'constant',[-1.63917610899585]
+MF10='Grande5':'constant',[3.67502044629283]
+MF11='Piccolo6':'constant',[-1.71870844115954]
+MF12='Grande6':'constant',[1.14345118536661]
+MF13='Piccolo7':'constant',[-9.96499263059237]
+MF14='Grande7':'constant',[-2.30147298151621]
+MF15='Piccolo8':'constant',[4.02751116384488]
+MF16='Grande8':'constant',[16.637538844293]
+
+[Rules]
+1 1 1 1, 1 (1) : 1
+1 1 1 2, 2 (1) : 1
+1 1 2 1, 3 (1) : 1
+1 1 2 2, 4 (1) : 1
+1 2 1 1, 5 (1) : 1
+1 2 1 2, 6 (1) : 1
+1 2 2 1, 7 (1) : 1
+1 2 2 2, 8 (1) : 1
+2 1 1 1, 9 (1) : 1
+2 1 1 2, 10 (1) : 1
+2 1 2 1, 11 (1) : 1
+2 1 2 2, 12 (1) : 1
+2 2 1 1, 13 (1) : 1
+2 2 1 2, 14 (1) : 1
+2 2 2 1, 15 (1) : 1
+2 2 2 2, 16 (1) : 1

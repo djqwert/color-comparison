@@ -1,0 +1,24 @@
+% La funzione realizzare la sequential features selection
+function R = sqfs(input,target)
+    
+    features = size(input,2)/2;
+    dis = gendis(features);
+    dis = [dis dis];
+    rows = size(dis,1);
+    
+    [input, target] = AggiungiPadding(input,target);
+    errors = zeros(rows,1);
+    
+    for i = 1:rows
+        disp(i)
+        features = find(dis(i,:));
+        errors(i) = kfoldcv(input(:,features)',target');
+    end
+    
+    % [minv,mini] = min(errors);
+    % disp(['Criterio: ',num2str(minv)]);
+    % disp('Vettore caratteristiche: ');
+    disp('Doppia sequential features selection terminata');
+    R = errors;
+ 
+end

@@ -1,0 +1,65 @@
+[System]
+Name='mamdani_fuzzy'
+Type='mamdani'
+Version=2.0
+NumInputs=4
+NumOutputs=1
+NumRules=16
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='L'
+Range=[0 100]
+NumMFs=2
+MF1='Bassa':'trimf',[-40 0 100]
+MF2='Alta':'trimf',[0 100 140]
+
+[Input2]
+Name='C'
+Range=[0 100]
+NumMFs=2
+MF1='Insaturo':'trimf',[-40 0 100]
+MF2='Saturo':'trimf',[0 100 140]
+
+[Input3]
+Name='hue'
+Range=[0 360]
+NumMFs=2
+MF1='Rosso1':'trimf',[-144 0 360]
+MF2='Rosso2':'trimf',[0 360 504]
+
+[Input4]
+Name='dErrore'
+Range=[0 5]
+NumMFs=2
+MF1='Piccolo':'trimf',[-2 0 5]
+MF2='Grande':'trimf',[0 5 7]
+
+[Output1]
+Name='Errore'
+Range=[0 5]
+NumMFs=2
+MF1='Piccolo':'trimf',[-2 0 5]
+MF2='Grande':'trimf',[0 5 7]
+
+[Rules]
+1 1 1 1, 1 (1) : 1
+1 1 1 2, 2 (1) : 1
+1 1 2 1, 1 (1) : 1
+1 1 2 2, 2 (1) : 1
+1 2 1 1, 1 (1) : 1
+1 2 1 2, 2 (1) : 1
+1 2 2 1, 1 (1) : 1
+1 2 2 2, 2 (1) : 1
+2 1 1 1, 1 (1) : 1
+2 1 1 2, 2 (1) : 1
+2 1 2 1, 1 (1) : 1
+2 1 2 2, 2 (1) : 1
+2 2 1 1, 1 (1) : 1
+2 2 1 2, 2 (1) : 1
+2 2 2 1, 1 (1) : 1
+2 2 2 2, 2 (1) : 1
